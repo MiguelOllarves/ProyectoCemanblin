@@ -65,6 +65,7 @@ function getDB(): PDO
                 if (!$dbExists) {
                     initializeDatabase($pdo, 'pgsql');
                 }
+                if (!defined('DB_DRIVER')) define('DB_DRIVER', 'pgsql');
             } catch (PDOException $e) {
                 handleConnectionError($e);
             }
@@ -87,6 +88,7 @@ function getDB(): PDO
                 if (!$dbExists) {
                     initializeDatabase($pdo, 'sqlite');
                 }
+                if (!defined('DB_DRIVER')) define('DB_DRIVER', 'sqlite');
             } catch (PDOException $e) {
                 handleConnectionError($e);
             }

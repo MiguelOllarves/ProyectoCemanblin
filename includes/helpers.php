@@ -106,12 +106,9 @@ function formatDate(?string $date, string $format = 'd/m/Y H:i'): string
  */
 function dbNow(): string
 {
-    try {
-        $driver = getDB()->getAttribute(PDO::ATTR_DRIVER_NAME);
-        return $driver === 'pgsql' ? 'NOW()' : "datetime('now', 'localtime')";
-    } catch (Exception $e) {
-        return 'NOW()';
-    }
+    // Asegurarse de que getDB() haya sido llamado al menos una vez para definir DB_DRIVER
+    getDB();
+    return (defined('DB_DRIVER') && DB_DRIVER === 'pgsql') ? 'NOW()' : "datetime('now', 'localtime')";
 }
 
 /**
@@ -119,12 +116,8 @@ function dbNow(): string
  */
 function dbDate(): string
 {
-    try {
-        $driver = getDB()->getAttribute(PDO::ATTR_DRIVER_NAME);
-        return $driver === 'pgsql' ? 'CURRENT_DATE' : "date('now')";
-    } catch (Exception $e) {
-        return 'CURRENT_DATE';
-    }
+    getDB();
+    return (defined('DB_DRIVER') && DB_DRIVER === 'pgsql') ? 'CURRENT_DATE' : "date('now')";
 }
 
 /**
