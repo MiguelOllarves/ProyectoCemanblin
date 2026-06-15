@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         setFlash('success', "Producto '{$nombre}' creado exitosamente.");
         redirect(BASE_URL . '/modules/inventario/index.php');
     } catch (PDOException $e) {
-        if (strpos($e->getMessage(), 'UNIQUE') !== false) {
+        if (stripos($e->getMessage(), 'unique') !== false || stripos($e->getMessage(), 'duplicate') !== false) {
             setFlash('error', "El código '{$codigo}' ya está en uso.");
         } else {
             setFlash('error', 'Error al crear producto: ' . $e->getMessage());

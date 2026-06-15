@@ -101,6 +101,33 @@ function formatDate(?string $date, string $format = 'd/m/Y H:i'): string
 }
 
 /**
+ * Retorna la expresión SQL para la fecha/hora actual según el driver activo.
+ * Uso: "UPDATE tabla SET updated_at = " . dbNow() . " WHERE id = :id"
+ */
+function dbNow(): string
+{
+    try {
+        $driver = getDB()->getAttribute(PDO::ATTR_DRIVER_NAME);
+        return $driver === 'pgsql' ? 'NOW()' : "datetime('now', 'localtime')";
+    } catch (Exception $e) {
+        return 'NOW()';
+    }
+}
+
+/**
+ * Retorna la expresión SQL para la fecha actual (sin hora) según el driver activo.
+ */
+function dbDate(): string
+{
+    try {
+        $driver = getDB()->getAttribute(PDO::ATTR_DRIVER_NAME);
+        return $driver === 'pgsql' ? 'CURRENT_DATE' : "date('now')";
+    } catch (Exception $e) {
+        return 'CURRENT_DATE';
+    }
+}
+
+/**
  * Genera HTML de paginación.
  */
 function renderPagination(int $currentPage, int $totalPages, string $baseUrl): string
@@ -151,7 +178,7 @@ function getProductosProximosVencer(): array
     $fechaLimite = date('Y-m-d', strtotime('+' . EXPIRY_ALERT_DAYS . ' days'));
     $stmt = $db->prepare("
         SELECT * FROM productos 
-        WHERE activo = 1 AND fecha_vencimiento IS NOT NULL AND fecha_vencimiento <= :fecha AND fecha_vencimiento >= date('now')
+        WHERE activo = 1 AND fecha_vencimiento IS NOT NULL AND fecha_vencimiento <= :fecha AND fecha_vencimiento >= CURRENT_DATE
         ORDER BY fecha_vencimiento ASC
     ");
     $stmt->execute([':fecha' => $fechaLimite]);

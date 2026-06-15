@@ -103,7 +103,7 @@ function loginUser(string $cedula, string $password): array
     $_SESSION['ip_address']     = getClientIP();
 
     // Actualizar último acceso en BD
-    $stmtUpdate = $db->prepare("UPDATE usuarios SET ultimo_acceso = datetime('now', 'localtime') WHERE id = :id");
+    $stmtUpdate = $db->prepare("UPDATE usuarios SET ultimo_acceso = " . dbNow() . " WHERE id = :id");
     $stmtUpdate->execute([':id' => $user['id']]);
 
     // Registrar login exitoso en auditoría

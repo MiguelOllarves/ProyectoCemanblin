@@ -16,7 +16,7 @@ if ($id) {
     $prod = $stmt->fetch();
 
     if ($prod) {
-        $db->prepare("UPDATE productos SET activo = 0, updated_at = datetime('now', 'localtime') WHERE id = :id")->execute([':id' => $id]);
+        $db->prepare("UPDATE productos SET activo = 0, updated_at = " . dbNow() . " WHERE id = :id")->execute([':id' => $id]);
         logAudit('DELETE', 'productos', $id, ['nombre' => $prod['nombre']]);
         setFlash('success', "Producto '{$prod['nombre']}' dado de baja.");
     }

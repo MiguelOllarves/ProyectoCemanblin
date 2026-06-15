@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     try {
-        $updateQuery = "UPDATE usuarios SET nombre_completo = :nom, grado = :gra, cargo = :car, rol = :rol, activo = :act, updated_at = datetime('now', 'localtime')";
+        $updateQuery = "UPDATE usuarios SET nombre_completo = :nom, grado = :gra, cargo = :car, rol = :rol, activo = :act, updated_at = " . dbNow();
         $params = [
             ':nom' => $nombre, ':gra' => $grado, ':car' => $cargo,
             ':rol' => $rol, ':act' => $activo, ':id' => $id

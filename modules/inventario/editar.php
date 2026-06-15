@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 codigo = :codigo, nombre = :nombre, descripcion = :desc, categoria_id = :cat,
                 unidad_medida = :unidad, stock_minimo = :minimo, precio_unitario = :precio,
                 ubicacion_almacen = :ubic, fecha_vencimiento = :venc, numero_parte = :parte,
-                updated_at = datetime('now', 'localtime')
+                updated_at = " . dbNow() . "
             WHERE id = :id
         ");
         $stmt->execute([

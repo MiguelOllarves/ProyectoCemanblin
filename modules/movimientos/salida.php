@@ -87,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } catch (Exception $e) {}
 
         // 3. Descontar stock
-        $db->prepare("UPDATE productos SET stock_actual = stock_actual - :cant, updated_at = datetime('now', 'localtime') WHERE id = :id")
+        $db->prepare("UPDATE productos SET stock_actual = stock_actual - :cant, updated_at = " . dbNow() . " WHERE id = :id")
            ->execute([':cant' => $cantidad, ':id' => $productoId]);
 
         $db->commit();

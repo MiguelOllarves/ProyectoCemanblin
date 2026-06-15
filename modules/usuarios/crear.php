@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         setFlash('success', 'Usuario creado exitosamente.');
         redirect(BASE_URL . '/modules/usuarios/index.php');
     } catch (PDOException $e) {
-        if (strpos($e->getMessage(), 'UNIQUE') !== false) {
+        if (stripos($e->getMessage(), 'unique') !== false || stripos($e->getMessage(), 'duplicate') !== false) {
             setFlash('error', 'La cédula ya está registrada.');
         } else {
             setFlash('error', 'Error: ' . $e->getMessage());
