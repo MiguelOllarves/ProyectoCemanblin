@@ -18,11 +18,11 @@ $totalVehiculos = $db->query("SELECT COUNT(*) FROM vehiculos WHERE activo = 1")-
 $vehiculosMantenimiento = $db->query("SELECT COUNT(*) FROM vehiculos WHERE estado = 'mantenimiento' AND activo = 1")->fetchColumn();
 
 // Movimientos de hoy
-$movHoy = $db->query("SELECT COUNT(*) FROM movimientos WHERE DATE(fecha_movimiento) = DATE('now', 'localtime')")->fetchColumn();
+$movHoy = $db->query("SELECT COUNT(*) FROM movimientos WHERE DATE(fecha_movimiento) = " . dbDate())->fetchColumn();
 
 // Entradas y salidas del mes actual
-$entradasMes = $db->query("SELECT COUNT(*) FROM movimientos WHERE tipo_movimiento = 'entrada' AND strftime('%Y-%m', fecha_movimiento) = strftime('%Y-%m', 'now', 'localtime')")->fetchColumn();
-$salidasMes = $db->query("SELECT COUNT(*) FROM movimientos WHERE tipo_movimiento = 'salida' AND strftime('%Y-%m', fecha_movimiento) = strftime('%Y-%m', 'now', 'localtime')")->fetchColumn();
+$entradasMes = $db->query("SELECT COUNT(*) FROM movimientos WHERE tipo_movimiento = 'entrada' AND " . dbMonthYear('fecha_movimiento') . " = " . dbCurrentMonthYear())->fetchColumn();
+$salidasMes = $db->query("SELECT COUNT(*) FROM movimientos WHERE tipo_movimiento = 'salida' AND " . dbMonthYear('fecha_movimiento') . " = " . dbCurrentMonthYear())->fetchColumn();
 
 // ── Alertas ────────────────────────────────────────────────────────────
 $stockBajo = getProductosStockBajo();
@@ -45,7 +45,7 @@ $movRecientes = $stmtRecientes->fetchAll();
 $stmtGrafico = $db->query("
     SELECT DATE(fecha_movimiento) as fecha, tipo_movimiento, COUNT(*) as total
     FROM movimientos
-    WHERE fecha_movimiento >= date('now', '-7 days', 'localtime')
+    WHERE fecha_movimiento >= " . dbDaysAgo(7) . "
     GROUP BY DATE(fecha_movimiento), tipo_movimiento
     ORDER BY fecha
 ");
@@ -74,7 +74,7 @@ $stmtTop = $db->query("
     FROM movimientos m
     JOIN productos p ON m.producto_id = p.id
     WHERE m.tipo_movimiento = 'salida'
-    AND strftime('%Y-%m', m.fecha_movimiento) = strftime('%Y-%m', 'now', 'localtime')
+    AND " . dbMonthYear('m.fecha_movimiento') . " = " . dbCurrentMonthYear() . "
     GROUP BY p.id
     ORDER BY total_despachado DESC
     LIMIT 5

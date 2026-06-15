@@ -121,6 +121,39 @@ function dbDate(): string
 }
 
 /**
+ * Retorna la expresión SQL para formatear una columna como 'YYYY-MM'
+ */
+function dbMonthYear(string $column): string
+{
+    getDB();
+    return (defined('DB_DRIVER') && DB_DRIVER === 'pgsql') 
+        ? "TO_CHAR({$column}, 'YYYY-MM')" 
+        : "strftime('%Y-%m', {$column})";
+}
+
+/**
+ * Retorna la expresión SQL para el mes y año actual 'YYYY-MM'
+ */
+function dbCurrentMonthYear(): string
+{
+    getDB();
+    return (defined('DB_DRIVER') && DB_DRIVER === 'pgsql') 
+        ? "TO_CHAR(NOW(), 'YYYY-MM')" 
+        : "strftime('%Y-%m', 'now', 'localtime')";
+}
+
+/**
+ * Retorna la expresión SQL para calcular "X días atrás"
+ */
+function dbDaysAgo(int $days): string
+{
+    getDB();
+    return (defined('DB_DRIVER') && DB_DRIVER === 'pgsql') 
+        ? "CURRENT_DATE - INTERVAL '{$days} days'" 
+        : "date('now', '-{$days} days', 'localtime')";
+}
+
+/**
  * Genera HTML de paginación.
  */
 function renderPagination(int $currentPage, int $totalPages, string $baseUrl): string
