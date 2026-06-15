@@ -27,10 +27,8 @@ define('APP_DESCRIPTION', 'Sistema de Gestión de Inventario y Trazabilidad');
 // BASE_PATH: Ruta absoluta en el filesystem del servidor
 define('BASE_PATH', dirname(__DIR__));
 
-// BASE_URL: URL base para enlaces y redirecciones (ajustar según entorno)
-// En servidor local PHP built-in: 'http://localhost:8080'
-// En XAMPP: 'http://localhost/ProyectoNavas'
-define('BASE_URL', 'http://localhost:8080');
+// Detectar URL dinámicamente o usar rutas relativas desde la raíz
+define('BASE_URL', '');
 
 // ── Configuración de Base de Datos ─────────────────────────────────────────
 // Ruta al archivo SQLite. Se almacena en /database/ por convención
