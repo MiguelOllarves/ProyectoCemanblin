@@ -1,6 +1,6 @@
 <?php
 /**
- * CEMABLN - Listado de Inventario
+ * CEMANBLIND - Listado de Inventario
  * CRUD: Vista principal con búsqueda, filtros y alertas de stock.
  */
 require_once __DIR__ . '/../../includes/auth.php';

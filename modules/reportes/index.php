@@ -1,6 +1,6 @@
 <?php
 /**
- * CEMABLN - Menú de Reportes
+ * CEMANBLIND - Menú de Reportes
  */
 require_once __DIR__ . '/../../includes/auth.php';
 require_once __DIR__ . '/../../includes/helpers.php';

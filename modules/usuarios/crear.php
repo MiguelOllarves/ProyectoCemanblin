@@ -1,6 +1,6 @@
 <?php
 /**
- * CEMABLN - Crear Usuario
+ * CEMANBLIND - Crear Usuario
  */
 require_once __DIR__ . '/../../includes/auth.php';
 require_once __DIR__ . '/../../includes/helpers.php';

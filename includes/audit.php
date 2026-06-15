@@ -1,13 +1,13 @@
 <?php
 /**
  * ============================================================================
- * CEMABLN - Sistema de Auditoría Inmutable
+ * CEMANBLIND - Sistema de Auditoría Inmutable
  * ============================================================================
  * 
  * Registra cada acción del sistema de forma inmutable.
  * Los registros incluyen: quién, qué, cuándo, IP.
  * 
- * @author   CEMABLN Dev Team
+ * @author   CEMANBLIND Dev Team
  * @version  1.0.0
  */
 

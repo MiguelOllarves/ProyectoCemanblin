@@ -1,7 +1,7 @@
 <?php
 /**
  * ============================================================================
- * CEMABLN - Conexión a Base de Datos (PDO + SQLite)
+ * CEMANBLIND - Conexión a Base de Datos (PDO + SQLite)
  * ============================================================================
  * 
  * Este archivo gestiona la conexión singleton a la base de datos SQLite.
@@ -13,7 +13,7 @@
  *   require_once __DIR__ . '/../database/db.php';
  *   $db = getDB(); // Retorna instancia PDO
  * 
- * @author   CEMABLN Dev Team
+ * @author   CEMANBLIND Dev Team
  * @version  1.0.0
  */
 

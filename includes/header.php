@@ -1,6 +1,6 @@
 <?php
 /**
- * CEMABLN - Header común con navegación lateral
+ * CEMANBLIND - Header común con navegación lateral
  * Incluye Tailwind CSS y Chart.js via CDN.
  * Estilo: Military/Tech con soporte Dark/Light Mode.
  */
@@ -16,7 +16,7 @@ $currentDir = basename(dirname($_SERVER['PHP_SELF']));
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="CEMABLN - Sistema de Gestión de Inventario y Trazabilidad para Blindados">
+    <meta name="description" content="CEMANBLIND - Sistema de Gestión de Inventario y Trazabilidad para Blindados">
     <title><?= APP_NAME ?> - <?= APP_FULL_NAME ?></title>
     
     <!-- Tailwind CSS via CDN -->

@@ -1,6 +1,6 @@
 <?php
 /**
- * CEMABLN - Listado de Movimientos (Historial de trazabilidad)
+ * CEMANBLIND - Listado de Movimientos (Historial de trazabilidad)
  */
 require_once __DIR__ . '/../../includes/auth.php';
 require_once __DIR__ . '/../../includes/helpers.php';

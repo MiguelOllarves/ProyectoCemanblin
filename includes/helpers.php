@@ -1,13 +1,13 @@
 <?php
 /**
  * ============================================================================
- * CEMABLN - Funciones Auxiliares (Helpers)
+ * CEMANBLIND - Funciones Auxiliares (Helpers)
  * ============================================================================
  * 
  * Funciones utilitarias reutilizables en todo el sistema:
  * sanitización, formato, paginación, generación de códigos.
  * 
- * @author   CEMABLN Dev Team
+ * @author   CEMANBLIND Dev Team
  * @version  1.0.0
  */
 

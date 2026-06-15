@@ -1,5 +1,5 @@
 -- ============================================================================
--- CEMABLN - Centro de Mantenimiento de Blindados
+-- CEMANBLIND - Centro de Mantenimiento de Blindados
 -- Script de Creación de Base de Datos (SQLite)
 -- ============================================================================
 --

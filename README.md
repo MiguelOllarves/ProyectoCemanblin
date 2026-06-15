@@ -1,4 +1,4 @@
-# Centro de Mantenimiento de Blindados (CEMABLN)
+# Centro de Mantenimiento de Blindados (CEMANBLIND)
 
 Prototipo funcional, modular y profesional para la gestión de inventario y trazabilidad de repuestos para vehículos blindados.
 
@@ -29,7 +29,7 @@ Prototipo funcional, modular y profesional para la gestión de inventario y traz
 ### Opción 2: Usando XAMPP, WAMP o LAMP
 
 1.  Copia la carpeta completa del proyecto dentro del directorio de publicación web de tu servidor (`htdocs` en XAMPP, `/var/www/html` en Apache/Linux).
-2.  Asegúrate de que el servidor web tenga permisos de escritura en la carpeta `/database` para que SQLite pueda crear y actualizar el archivo de la base de datos (`cemabln.sqlite`).
+2.  Asegúrate de que el servidor web tenga permisos de escritura en la carpeta `/database` para que SQLite pueda crear y actualizar el archivo de la base de datos (`cemanblind.sqlite`).
 3.  Si la URL de tu proyecto no es la raíz (ej. `http://localhost/ProyectoNavas`), debes ajustar la constante `BASE_URL` en el archivo `/config/app.php` a la URL correspondiente.
     ```php
     // En config/app.php

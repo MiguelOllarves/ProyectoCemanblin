@@ -1,6 +1,6 @@
 <?php
 /**
- * CEMABLN - Dashboard Principal
+ * CEMANBLIND - Dashboard Principal
  * Vista con indicadores de gestión, alertas críticas y movimientos recientes.
  * Usa Chart.js para gráficos.
  */

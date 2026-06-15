@@ -1,6 +1,6 @@
 <?php
 /**
- * CEMABLN - Vale de Salida (Imprimible / PDF)
+ * CEMANBLIND - Vale de Salida (Imprimible / PDF)
  * Genera un vale imprimible con print() para convertir a PDF.
  */
 require_once __DIR__ . '/../../includes/auth.php';

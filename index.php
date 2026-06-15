@@ -1,6 +1,6 @@
 <?php
 /**
- * CEMABLN - Página de Login
+ * CEMANBLIND - Página de Login
  * Punto de entrada principal del sistema.
  */
 require_once __DIR__ . '/includes/auth.php';

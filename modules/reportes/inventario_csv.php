@@ -1,6 +1,6 @@
 <?php
 /**
- * CEMABLN - Exportar Inventario a CSV
+ * CEMANBLIND - Exportar Inventario a CSV
  */
 require_once __DIR__ . '/../../includes/auth.php';
 
@@ -33,7 +33,7 @@ $productos = $stmt->fetchAll();
 logAudit('REPORT', 'productos', null, ['tipo' => 'csv_inventario', 'estado' => $estado]);
 
 // Generar CSV
-$filename = "inventario_cemabln_" . date('Ymd_His') . ".csv";
+$filename = "inventario_cemanblind_" . date('Ymd_His') . ".csv";
 
 header('Content-Type: text/csv; charset=utf-8');
 header('Content-Disposition: attachment; filename=' . $filename);

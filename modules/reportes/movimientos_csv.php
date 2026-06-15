@@ -1,6 +1,6 @@
 <?php
 /**
- * CEMABLN - Exportar Movimientos a CSV
+ * CEMANBLIND - Exportar Movimientos a CSV
  */
 require_once __DIR__ . '/../../includes/auth.php';
 
@@ -40,7 +40,7 @@ $movimientos = $stmt->fetchAll();
 logAudit('REPORT', 'movimientos', null, ['tipo' => 'csv_movimientos', 'desde' => $desde, 'hasta' => $hasta, 'filtro_tipo' => $tipo]);
 
 // Generar CSV
-$filename = "movimientos_cemabln_" . date('Ymd_His') . ".csv";
+$filename = "movimientos_cemanblind_" . date('Ymd_His') . ".csv";
 
 header('Content-Type: text/csv; charset=utf-8');
 header('Content-Disposition: attachment; filename=' . $filename);

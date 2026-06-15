@@ -1,14 +1,14 @@
 <?php
 /**
  * ============================================================================
- * CEMABLN - Centro de Mantenimiento de Blindados
+ * CEMANBLIND - Centro de Mantenimiento de Blindados
  * Archivo de Configuración Global
  * ============================================================================
  * 
  * Este archivo centraliza todas las constantes y configuraciones del sistema.
  * Modifica estos valores según el entorno de despliegue (desarrollo/producción).
  * 
- * @author   CEMABLN Dev Team
+ * @author   CEMANBLIND Dev Team
  * @version  1.0.0
  * @since    2026-05-28
  */
@@ -18,7 +18,7 @@
 define('APP_DEBUG', true);
 
 // ── Información de la aplicación ───────────────────────────────────────────
-define('APP_NAME', 'CEMABLN');
+define('APP_NAME', 'CEMANBLIND');
 define('APP_FULL_NAME', 'Centro de Mantenimiento de Blindados');
 define('APP_VERSION', '1.0.0');
 define('APP_DESCRIPTION', 'Sistema de Gestión de Inventario y Trazabilidad');
@@ -32,7 +32,7 @@ define('BASE_URL', '');
 
 // ── Configuración de Base de Datos ─────────────────────────────────────────
 // Ruta al archivo SQLite. Se almacena en /database/ por convención
-define('DB_PATH', BASE_PATH . '/database/cemabln.sqlite');
+define('DB_PATH', BASE_PATH . '/database/cemanblind.sqlite');
 
 // ── Configuración de Sesiones ──────────────────────────────────────────────
 // Tiempo máximo de inactividad antes de cerrar sesión automáticamente (segundos)
@@ -40,7 +40,7 @@ define('DB_PATH', BASE_PATH . '/database/cemabln.sqlite');
 define('SESSION_LIFETIME', 1800);
 
 // Nombre de la cookie de sesión (evitar nombres genéricos por seguridad)
-define('SESSION_NAME', 'CEMABLN_SESSID');
+define('SESSION_NAME', 'CEMANBLIND_SESSID');
 
 // ── Roles del Sistema (RBAC) ──────────────────────────────────────────────
 // Definición jerárquica de roles. El nivel numérico determina el acceso:

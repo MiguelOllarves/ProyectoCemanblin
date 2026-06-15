@@ -1,6 +1,6 @@
 <?php
 /**
- * CEMABLN - Cierre de Sesión
+ * CEMANBLIND - Cierre de Sesión
  */
 require_once __DIR__ . '/includes/auth.php';
 logoutUser();

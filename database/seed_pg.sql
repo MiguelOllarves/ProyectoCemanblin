@@ -1,5 +1,5 @@
 -- ============================================================================
--- CEMABLN - Script de Seed (Datos de Prueba para PostgreSQL)
+-- CEMANBLIND - Script de Seed (Datos de Prueba para PostgreSQL)
 -- ============================================================================
 -- Este script inserta datos ficticios para poder probar la aplicación en Supabase.
 -- Incluye un superusuario, categorías, productos, vehículos y movimientos.

@@ -1,7 +1,7 @@
 <?php
 /**
  * ============================================================================
- * CEMABLN - Sistema de Autenticación y Control de Acceso (RBAC)
+ * CEMANBLIND - Sistema de Autenticación y Control de Acceso (RBAC)
  * ============================================================================
  * 
  * Este archivo proporciona todas las funciones de autenticación:
@@ -14,7 +14,7 @@
  *   require_once __DIR__ . '/../includes/auth.php';
  *   requireRole(ROLE_USUARIO); // Mínimo rol requerido
  * 
- * @author   CEMABLN Dev Team
+ * @author   CEMANBLIND Dev Team
  * @version  1.0.0
  */
 

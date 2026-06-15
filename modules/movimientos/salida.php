@@ -1,7 +1,7 @@
 <?php
 /**
  * ============================================================================
- * CEMABLN - Despacho de Salida (CORE de Trazabilidad)
+ * CEMANBLIND - Despacho de Salida (CORE de Trazabilidad)
  * ============================================================================
  * 
  * Este es el proceso más crítico del sistema. Cada salida DEBE registrar:

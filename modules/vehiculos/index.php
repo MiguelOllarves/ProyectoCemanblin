@@ -1,6 +1,6 @@
 <?php
 /**
- * CEMABLN - Gestión de Vehículos
+ * CEMANBLIND - Gestión de Vehículos
  */
 require_once __DIR__ . '/../../includes/auth.php';
 require_once __DIR__ . '/../../includes/helpers.php';

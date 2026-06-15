@@ -1,6 +1,6 @@
 <?php
 /**
- * CEMABLN - Eliminar Producto (Soft Delete)
+ * CEMANBLIND - Eliminar Producto (Soft Delete)
  */
 require_once __DIR__ . '/../../includes/auth.php';
 require_once __DIR__ . '/../../includes/helpers.php';

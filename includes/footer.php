@@ -1,6 +1,6 @@
 <?php
 /**
- * CEMABLN - Footer común
+ * CEMANBLIND - Footer común
  */
 ?>
         </div><!-- /Page Content -->
