@@ -166,19 +166,7 @@ $currentDir = basename(dirname($_SERVER['PHP_SELF']));
             <?php endif; ?>
         </nav>
         
-        <!-- User Info -->
-        <div class="p-4 border-t border-slate-200 dark:border-steel-800 bg-slate-50 dark:bg-transparent">
-            <div class="flex items-center gap-3">
-                <div class="w-8 h-8 bg-military-200 dark:bg-military-700 rounded-full flex items-center justify-center text-xs font-bold text-military-800 dark:text-military-300 shadow-inner">
-                    <?= strtoupper(substr($currentUser['nombre'], 0, 2)) ?>
-                </div>
-                <div class="flex-1 min-w-0">
-                    <p class="text-xs font-bold text-slate-700 dark:text-gray-300 truncate"><?= sanitize($currentUser['grado'] . ' ' . $currentUser['nombre']) ?></p>
-                    <p class="text-[10px] text-military-600 dark:text-military-400 font-medium"><?= sanitize($currentUser['rol_name']) ?></p>
-                </div>
-                <a href="<?= BASE_URL ?>/logout.php" class="text-red-500 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300 text-sm transition-colors" title="Cerrar Sesión">⏻</a>
-            </div>
-        </div>
+        <!-- User Info Removed (Moved to Header) -->
     </aside>
     
     <!-- Main Content -->
@@ -211,6 +199,22 @@ $currentDir = basename(dirname($_SERVER['PHP_SELF']));
                         <span class="absolute -top-1 -right-1 w-4 h-4 bg-red-600 text-white text-[9px] rounded-full flex items-center justify-center font-bold border-2 border-white dark:border-steel-950 shadow-sm"><?= $alertCount ?></span>
                     </a>
                     <?php endif; ?>
+
+                    <!-- User Profile & Logout -->
+                    <div class="flex items-center gap-3 pl-4 border-l border-slate-200 dark:border-steel-800 ml-1">
+                        <div class="hidden md:flex flex-col text-right">
+                            <span class="text-xs font-bold text-slate-800 dark:text-gray-200"><?= sanitize($currentUser['grado'] . ' ' . $currentUser['nombre']) ?></span>
+                            <span class="text-[10px] font-bold text-military-600 dark:text-military-400 uppercase tracking-wider"><?= sanitize($currentUser['rol_name']) ?></span>
+                        </div>
+                        <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-military-600 to-military-400 text-white flex items-center justify-center text-sm font-bold shadow-md shadow-military-500/30 ring-2 ring-white dark:ring-steel-950">
+                            <?= strtoupper(substr($currentUser['nombre'], 0, 2)) ?>
+                        </div>
+                        <a href="<?= BASE_URL ?>/logout.php" class="ml-1 flex items-center justify-center w-9 h-9 rounded-xl bg-red-50 hover:bg-red-500 hover:text-white dark:bg-red-900/30 dark:hover:bg-red-600 text-red-600 dark:text-red-400 dark:hover:text-white transition-all duration-300 shadow-sm border border-red-100 dark:border-red-900/50" title="Cerrar Sesión">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </div>
         </header>
